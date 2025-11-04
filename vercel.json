@@ -2,5 +2,10 @@
   "version": 2,
   "buildCommand": "cd video-conference-frontend-clean && npm install && npm run build",
   "outputDirectory": "video-conference-frontend-clean/dist",
-  "framework": "vite"
+  "framework": "vite",
+  "env": {
+    "VITE_API_URL": "https://videoconferencebackend-1.onrender.com/api",
+    "VITE_BACKEND_URL": "https://videoconferencebackend-1.onrender.com",
+    "VITE_SOCKET_URL": "https://videoconferencebackend-1.onrender.com"
+  }
 }
