@@ -36,6 +36,29 @@ function Login() {
   );
 }
 
+function Register() {
+  return (
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Create Account ✨</h2>
+        <div className="input-field">
+          <input type="text" placeholder="Full Name" />
+        </div>
+        <div className="input-field">
+          <input type="email" placeholder="Email" />
+        </div>
+        <div className="input-field">
+          <input type="password" placeholder="Password" />
+        </div>
+        <button className="login-btn">Register</button>
+        <div className="create-account">
+          Already have an account? <Link to="/login">Login</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <>
@@ -43,6 +66,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} /> {/* ✅ Added this */}
       </Routes>
     </>
   );
