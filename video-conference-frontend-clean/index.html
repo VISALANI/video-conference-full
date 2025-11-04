@@ -6,36 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="VidMeet – A smart and secure group video conferencing platform built with WebRTC, React, and Socket.io."
+      content="VidMeet – Connect, collaborate, and communicate instantly through secure video conferencing."
     />
-    <meta name="keywords" content="WebRTC, React, Video Conference, VidMeet, Socket.io" />
+    <meta name="keywords" content="VidMeet, WebRTC, Video Call, Socket.io, React" />
     <meta name="author" content="VidMeet Team" />
-    <meta name="theme-color" content="#6a11cb" />
+    <meta name="theme-color" content="#7c3aed" />
 
     <!-- 🖼️ Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- 🎨 Fonts -->
+    <!-- 🧠 Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <title>VidMeet | Connect Seamlessly</title>
+    <title>VidMeet | Video Conferencing Simplified</title>
 
-    <!-- 💅 Inline Styling for Loader -->
+    <!-- 🎨 Styling -->
     <style>
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background: linear-gradient(135deg, #141e30, #243b55);
-        color: #fff;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: #ffffff;
         height: 100vh;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
       }
 
       #root {
@@ -43,56 +43,60 @@
         height: 100%;
       }
 
-      /* 🌟 Loader Style */
+      /* ✨ Loader */
       .loader {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px;
-        animation: fadeIn 1s ease-in;
+        gap: 18px;
+        animation: fadeIn 1s ease;
       }
 
       .logo {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: pulse 1.5s infinite;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        animation: pulse 1.6s infinite;
       }
 
       .logo img {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
       }
 
-      h2 {
+      .loader h2 {
+        font-size: 1.4rem;
         font-weight: 500;
-        letter-spacing: 0.8px;
+        letter-spacing: 0.5px;
         color: rgba(255, 255, 255, 0.9);
       }
 
+      /* 💫 Animations */
       @keyframes pulse {
         0% {
           transform: scale(1);
-          opacity: 0.8;
+          opacity: 0.85;
         }
         50% {
-          transform: scale(1.15);
+          transform: scale(1.1);
           opacity: 1;
         }
         100% {
           transform: scale(1);
-          opacity: 0.8;
+          opacity: 0.85;
         }
       }
 
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(10px);
         }
         to {
           opacity: 1;
@@ -103,18 +107,18 @@
       /* 🌙 Dark Mode */
       @media (prefers-color-scheme: dark) {
         body {
-          background: linear-gradient(135deg, #0f172a, #1e293b);
+          background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
       }
 
       /* 📱 Mobile Responsive */
       @media (max-width: 600px) {
-        h2 {
-          font-size: 1rem;
+        .loader h2 {
+          font-size: 1.1rem;
         }
         .logo {
-          width: 70px;
-          height: 70px;
+          width: 80px;
+          height: 80px;
         }
       }
     </style>
@@ -122,8 +126,8 @@
 
   <body>
     <noscript>
-      <p style="color: white; text-align: center; margin-top: 40px;">
-        ⚠️ VidMeet requires JavaScript to run properly.
+      <p style="color: white; text-align: center; margin-top: 50px;">
+        ⚠️ Please enable JavaScript to use VidMeet.
       </p>
     </noscript>
 
