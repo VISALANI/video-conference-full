@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- ✅ Meta -->
+    <!-- 🌐 Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="VidMeet – A modern group video conferencing app built with WebRTC, Socket.io, and React."
+      content="VidMeet – A smart and secure group video conferencing platform built with WebRTC, React, and Socket.io."
     />
-    <meta name="keywords" content="Video Call, WebRTC, React, Socket.io, VidMeet" />
+    <meta name="keywords" content="WebRTC, React, Video Conference, VidMeet, Socket.io" />
     <meta name="author" content="VidMeet Team" />
     <meta name="theme-color" content="#6a11cb" />
-
-    <!-- 📱 PWA / Mobile Support -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- 🖼️ Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- 🌐 Fonts -->
+    <!-- 🎨 Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <title>VidMeet</title>
+    <title>VidMeet | Connect Seamlessly</title>
 
-    <!-- 🎨 Custom Style -->
+    <!-- 💅 Inline Styling for Loader -->
     <style>
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background: radial-gradient(circle at top right, #6a11cb, #2575fc);
+        background: linear-gradient(135deg, #141e30, #243b55);
         color: #fff;
         height: 100vh;
-        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
       }
 
       #root {
@@ -48,37 +43,35 @@
         height: 100%;
       }
 
-      /* 🚀 Loader Style */
+      /* 🌟 Loader Style */
       .loader {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 20px;
+        gap: 16px;
+        animation: fadeIn 1s ease-in;
       }
 
       .logo {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 50%;
-        border: 3px solid rgba(255, 255, 255, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.1);
-        animation: pulse 1.5s infinite ease-in-out;
+        animation: pulse 1.5s infinite;
       }
 
       .logo img {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
       }
 
-      .loader h2 {
-        font-size: 1.4rem;
+      h2 {
         font-weight: 500;
-        letter-spacing: 1px;
-        text-align: center;
+        letter-spacing: 0.8px;
+        color: rgba(255, 255, 255, 0.9);
       }
 
       @keyframes pulse {
@@ -96,17 +89,28 @@
         }
       }
 
-      /* 🌙 Dark Mode Support */
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: radial-gradient(circle at bottom left, #0f172a, #1e293b);
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 
-      /* 📱 Responsive */
+      /* 🌙 Dark Mode */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+      }
+
+      /* 📱 Mobile Responsive */
       @media (max-width: 600px) {
-        .loader h2 {
-          font-size: 1.1rem;
+        h2 {
+          font-size: 1rem;
         }
         .logo {
           width: 70px;
@@ -118,19 +122,18 @@
 
   <body>
     <noscript>
-      <p style="color: white; text-align: center; margin-top: 50px;">
-        ⚠️ This app requires JavaScript to run properly.
+      <p style="color: white; text-align: center; margin-top: 40px;">
+        ⚠️ VidMeet requires JavaScript to run properly.
       </p>
     </noscript>
 
-    <!-- 💫 React Mount Point -->
+    <!-- ⚛️ React Mount -->
     <div id="root">
-      <!-- ✨ Preload Animation -->
       <div class="loader">
         <div class="logo">
           <img src="/favicon.png" alt="VidMeet Logo" />
         </div>
-        <h2>Starting VidMeet...</h2>
+        <h2>Launching VidMeet...</h2>
       </div>
     </div>
 
