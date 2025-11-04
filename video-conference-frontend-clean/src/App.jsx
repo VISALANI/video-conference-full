@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 
+// 🌐 Navbar
 function Navbar() {
   return (
     <nav className="navbar">
@@ -16,6 +17,7 @@ function Navbar() {
   );
 }
 
+// 🔐 Login
 function Login() {
   return (
     <div className="login-container">
@@ -36,13 +38,14 @@ function Login() {
   );
 }
 
+// 🆕 Register
 function Register() {
   return (
     <div className="login-container">
       <div className="login-box">
         <h2>Create Account ✨</h2>
         <div className="input-field">
-          <input type="text" placeholder="Full Name" />
+          <input type="text" placeholder="Name" />
         </div>
         <div className="input-field">
           <input type="email" placeholder="Email" />
@@ -59,6 +62,7 @@ function Register() {
   );
 }
 
+// 🚀 App
 export default function App() {
   return (
     <>
@@ -66,7 +70,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> {/* ✅ Added this */}
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
