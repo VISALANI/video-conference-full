@@ -6,87 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A sleek group video conferencing app built with WebRTC, Socket.io, and React."
+      content="VidMeet – A modern group video conferencing app built with WebRTC, Socket.io, and React."
     />
-    <meta
-      name="keywords"
-      content="Video Call, WebRTC, React, Socket.io, Conference App"
-    />
-    <meta name="author" content="Video Conference App" />
+    <meta name="keywords" content="Video Call, WebRTC, React, Socket.io, VidMeet" />
+    <meta name="author" content="VidMeet Team" />
     <meta name="theme-color" content="#6a11cb" />
 
-    <!-- 📱 PWA / Apple Support -->
+    <!-- 📱 PWA / Mobile Support -->
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- 🖼️ Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- ⚡ Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- 🌐 Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- 🌐 Title -->
-    <title>Video Conference App</title>
+    <title>VidMeet</title>
 
-    <!-- ✨ Custom Styles -->
+    <!-- 🎨 Custom Style -->
     <style>
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        color: #111827;
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        min-height: 100vh;
+        background: radial-gradient(circle at top right, #6a11cb, #2575fc);
+        color: #fff;
+        height: 100vh;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.5s ease, color 0.5s ease;
-      }
-
-      body.dark {
-        background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-        color: #f9fafb;
       }
 
       #root {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
+        height: 100%;
       }
 
-      /* ✳️ Loading Screen */
+      /* 🚀 Loader Style */
       .loader {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px;
-        text-align: center;
+        justify-content: center;
+        gap: 20px;
       }
 
-      .loader-logo {
+      .logo {
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.15);
+        border: 3px solid rgba(255, 255, 255, 0.2);
         display: flex;
-        justify-content: center;
         align-items: center;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        animation: pulse 1.5s infinite;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        animation: pulse 1.5s infinite ease-in-out;
       }
 
-      .loader-logo img {
-        width: 50px;
-        height: 50px;
+      .logo img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .loader h2 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
       }
 
       @keyframes pulse {
@@ -95,7 +87,7 @@
           opacity: 0.8;
         }
         50% {
-          transform: scale(1.1);
+          transform: scale(1.15);
           opacity: 1;
         }
         100% {
@@ -104,17 +96,21 @@
         }
       }
 
-      .loader-text {
-        font-weight: 600;
-        font-size: 1.2rem;
-        color: #ffffff;
-        letter-spacing: 0.5px;
-      }
-
+      /* 🌙 Dark Mode Support */
       @media (prefers-color-scheme: dark) {
         body {
-          background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-          color: #f9fafb;
+          background: radial-gradient(circle at bottom left, #0f172a, #1e293b);
+        }
+      }
+
+      /* 📱 Responsive */
+      @media (max-width: 600px) {
+        .loader h2 {
+          font-size: 1.1rem;
+        }
+        .logo {
+          width: 70px;
+          height: 70px;
         }
       }
     </style>
@@ -122,18 +118,19 @@
 
   <body>
     <noscript>
-      <p style="text-align: center; margin-top: 50px; color: white;">
+      <p style="color: white; text-align: center; margin-top: 50px;">
         ⚠️ This app requires JavaScript to run properly.
       </p>
     </noscript>
 
-    <!-- 💫 Root / Loading UI -->
+    <!-- 💫 React Mount Point -->
     <div id="root">
+      <!-- ✨ Preload Animation -->
       <div class="loader">
-        <div class="loader-logo">
-          <img src="/favicon.png" alt="App Logo" />
+        <div class="logo">
+          <img src="/favicon.png" alt="VidMeet Logo" />
         </div>
-        <div class="loader-text">Launching Video Conference...</div>
+        <h2>Starting VidMeet...</h2>
       </div>
     </div>
 
