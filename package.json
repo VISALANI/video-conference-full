@@ -1,0 +1,15 @@
+{
+  "name": "video-conference-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Root package for Vercel to build the frontend subdirectory",
+  "scripts": {
+    "build": "cd frontend && npm ci && npm run build",
+    "vercel-build": "cd frontend && npm ci && npm run build",
+    "dev": "cd frontend && npm run dev"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
+
