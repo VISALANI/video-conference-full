@@ -3,15 +3,15 @@
   <head>
     <!-- ✅ Basic Meta -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
     <meta name="description" content="A modern group video conferencing app built with WebRTC, Socket.io, and React." />
-    <meta name="keywords" content="Video Call, WebRTC, React, Socket.io, Conference App" />
+    <meta name="keywords" content="Video Call, WebRTC, React, Socket.io, Conference App, Vite" />
     <meta name="author" content="Video Conference App" />
     <meta name="theme-color" content="#7f00ff" />
 
-    <!-- 📱 Apple / PWA Compatibility -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- 🖥️ Desktop Optimization -->
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="no" />
 
     <!-- 🖼️ Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -20,24 +20,38 @@
     <!-- ⚡ Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- 🌐 Title -->
     <title>Video Conference App</title>
+
+    <!-- 🧩 Desktop Styling -->
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        overflow-x: hidden;
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          padding: 2rem;
+          background-color: #f3f4f6;
+        }
+      }
+    </style>
   </head>
 
-  <body
-    class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white font-[Poppins]"
-  >
+  <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
     <noscript>
       <p style="text-align: center; margin-top: 50px;">
         ⚠️ This app requires JavaScript to run properly.
       </p>
     </noscript>
 
+    <!-- ⚙️ React Root -->
     <div id="root"></div>
 
     <!-- 🚀 Entry Point -->
