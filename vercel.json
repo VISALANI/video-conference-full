@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "buildCommand": "cd video-conference-frontend-clean && npm install && npm run build",
+  "outputDirectory": "video-conference-frontend-clean/dist",
+  "framework": "vite"
+}
