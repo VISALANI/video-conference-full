@@ -1,31 +1,49 @@
-// src/App.jsx
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Room from "./pages/Room";
-import Feedback from "./pages/Feedback";
-import { applyStoredTheme } from "./utils/theme";
+import { Routes, Route, Link } from "react-router-dom";
+import "./index.css";
 
-applyStoredTheme();
-
-const App = () => {
-  const token = localStorage.getItem("token");
-  const user = JSON.parse(localStorage.getItem("user")) || { name: "Guest" };
-
+function Navbar() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-      <Navbar />
-      <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/room/:roomId" element={<Room />} />
-          <Route path="/feedback/:roomId" element={<Feedback />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </main>
+    <nav className="navbar">
+      <div className="logo">📹 VidMeet</div>
+      <ul>
+        <li><Link to="/">🏠 Home</Link></li>
+        <li><Link to="/login">➡️ Login</Link></li>
+        <li><Link to="/register">👥 Register</Link></li>
+        <li><button className="create-room">Create Room</button></li>
+      </ul>
+    </nav>
+  );
+}
+
+function Login() {
+  return (
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Welcome Back 👋</h2>
+        <div className="input-field">
+          <input type="email" placeholder="Email" />
+        </div>
+        <div className="input-field">
+          <input type="password" placeholder="Password" />
+        </div>
+        <button className="login-btn">Login</button>
+        <div className="create-account">
+          Create an account? <Link to="/register">Sign up</Link>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
+  );
+}

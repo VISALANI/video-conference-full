@@ -1,85 +1,146 @@
-/* ================================
-   🌈 Tailwind Base Configuration
-   ================================ */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ================================
-   🌐 Global Styling
-   ================================ */
-html,
-body {
+/* Global Reset */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
-  scroll-behavior: smooth;
 }
 
-/* Support for Dark Mode */
-.dark {
-  background-color: #0f172a;
-  color: #f1f5f9;
-}
-
-/* ================================
-   🌟 Custom Utility Classes
-   ================================ */
-
-/* 🎨 Gradient Backgrounds */
-.bg-gradient-hero {
-  background: linear-gradient(135deg, #7f00ff, #e100ff);
-}
-
-.btn-gradient {
-  background: linear-gradient(90deg, #2563eb, #9333ea);
+body, html {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 
-.btn-gradient:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 10;
 }
 
-/* 💬 Hover Card Effect */
-.hover-card {
-  transition: all 0.3s ease;
+.navbar .logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: #fff;
 }
 
-.hover-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-/* ✨ Smooth Animations */
-.fade-in {
-  animation: fadeIn 0.8s ease-in-out;
+.navbar ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.navbar ul li a:hover {
+  color: #4dabff;
 }
 
-/* ================================
-   📱 Responsive Tweaks
-   ================================ */
-@media (max-width: 768px) {
-  .btn-gradient {
-    font-size: 0.95rem;
-  }
+.create-room {
+  background: #4dabff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  .hover-card {
-    padding: 1rem;
-  }
+.create-room:hover {
+  background: #6a11cb;
+}
+
+/* Center Login Box */
+.login-container {
+  margin-top: 80px; /* below navbar */
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 40px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* Inputs */
+.input-field input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-field input::placeholder {
+  color: #eee;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e94057;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #ff5f6d;
+}
+
+/* Footer */
+.create-account {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.create-account a {
+  color: #4dabff;
+  text-decoration: none;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
 }
